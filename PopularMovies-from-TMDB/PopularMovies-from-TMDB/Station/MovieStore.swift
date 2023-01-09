@@ -2,7 +2,7 @@
 //  MovieStore.swift
 //  PopularMovies-from-TMDB
 //
-//  Created by Consultant on 1/8/23.
+//  Created by Consultant on 1/7/23.
 //
 
 import Foundation
@@ -13,7 +13,7 @@ class MovieStore: MovieStation {
     static let shared = MovieStore()
     private init() {}
     
-    private let apiKey = "MyKey"
+    private let apiKey = "0ee1084524aebea4467b2469f4cec50b"
     private let baseAPIURL = "https://api.themoviedb.org/3"
     private let urlSession = URLSession.shared
     private let jsonDecoder = JsonHelper.jsonDecoder
@@ -33,19 +33,6 @@ class MovieStore: MovieStation {
         }
         self.loadURLAndDecode(url: url, params: [
             "append_to_response": "videos,credits"
-        ], completion: completion)
-    }
-    
-    func searchMovie(query: String, completion: @escaping (Result<MovieResponse, MovieError>) -> ()) {
-        guard let url = URL(string: "\(baseAPIURL)/search/movie") else {
-            completion(.failure(.invalidEndpoint))
-            return
-        }
-        self.loadURLAndDecode(url: url, params: [
-            "language": "en-US",
-            "include_adult": "false",
-            "region": "US",
-            "query": query
         ], completion: completion)
     }
     
