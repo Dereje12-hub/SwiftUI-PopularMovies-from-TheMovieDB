@@ -13,7 +13,7 @@ class MovieStore: MovieStation {
     static let shared = MovieStore()
     private init() {}
     
-    private let apiKey = "0ee1084524aebea4467b2469f4cec50b"
+    private let apiKey = "YOURKEY"
     private let baseAPIURL = "https://api.themoviedb.org/3"
     private let urlSession = URLSession.shared
     private let jsonDecoder = JsonHelper.jsonDecoder
