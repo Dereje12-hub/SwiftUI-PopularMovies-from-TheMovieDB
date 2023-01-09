@@ -2,16 +2,17 @@
 //  PopularMovies_from_TMDBApp.swift
 //  PopularMovies-from-TMDB
 //
-//  Created by Consultant on 1/8/23.
+//  Created by Dereje on 1/7/23.
 //
 
 import SwiftUI
 
 @main
-struct PopularMovies_from_TMDBApp: App {
+struct PopularMovies_from_TMDB: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          
+            MovieListView()
         }
     }
 }
